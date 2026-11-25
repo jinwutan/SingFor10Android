@@ -10,7 +10,9 @@ android {
     defaultConfig {
         applicationId "com.example.singfor10"
         minSdk 23
-        targetSdk 35
+        // 保持 34：Android 15 起禁止从 BOOT_COMPLETED 启动 mediaPlayback 类型前台服务，
+        // targetSdk 34 才能在关机重启后续播（本工程为侧载，不受 Play 商店 target 要求约束）
+        targetSdk 34
         versionCode 1
         versionName "1.0"
     }

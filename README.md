@@ -101,6 +101,10 @@ bash scripts/build-apk.sh
 
 > Debug APK 使用 Android 默认 debug 签名，可直接安装；不同版本覆盖安装时若提示签名冲突，先卸载旧版。
 
+> 设计说明：`targetSdk` 固定为 34。Android 15（API 35）起系统禁止从 `BOOT_COMPLETED` 广播启动
+> `mediaPlayback` 类型前台服务，保持 34 才能让「开机续播」生效。本工程走侧载分发，不受 Play 商店
+> 对 targetSdk 的强制要求约束。
+
 ---
 
 ## 五、可调参数
